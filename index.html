@@ -172,6 +172,78 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;display:grid;gap
   .logos nav{display:none}
   .chip{height:50px;padding:6px 10px}.chip img{max-height:34px;max-width:130px}.logos .set{gap:8px}
 }
+
+/* v2 */
+.chip{height:64px;width:auto}
+.chip img{max-height:46px}
+.chip.cw{padding:4px 10px}.chip.cw img{max-height:56px;max-width:none}
+.hero{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;gap:18px;padding-block:28px 60px}
+.lockup{display:flex;align-items:center;gap:28px}
+.lockup .globe{width:clamp(130px,22vw,250px);max-width:none}
+.lockup-text{text-align:left;border-left:3px solid var(--ink);padding-left:28px;display:grid;gap:8px}
+.lockup h1{margin:0;font-size:clamp(40px,6.6vw,78px)}
+.lockup .sub{font-family:var(--display);font-weight:600;font-size:clamp(17px,2.2vw,26px)}
+.hero .tagline{margin:6px 0 0}
+.hero-row{display:flex;flex-wrap:wrap;gap:24px;justify-content:center;align-items:center;margin-top:8px}
+.hero .facts{margin-top:0;text-align:left}
+.count-wrap{display:grid;gap:8px;justify-items:center}
+.about{display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:start}
+.about .sec-head{margin-bottom:0}
+.about .sec-head p{color:var(--muted)}
+.who{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px 24px;display:grid;gap:12px}
+.who dl{margin:0;display:grid;gap:0}
+.who dl>div{display:grid;grid-template-columns:110px 1fr;gap:12px;padding-block:12px;border-top:1px solid var(--line)}
+.who dt{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-family:var(--display);font-weight:500;padding-top:2px}
+.who dd{margin:0;font-family:var(--display);font-weight:600;font-size:15.5px;line-height:1.4}
+.ws{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ws-card{background:var(--blue);color:var(--onblue);border-radius:16px;padding:22px;display:grid;gap:8px;align-content:start}
+.ws-card:nth-child(even){background:var(--orange);color:#1b1206}
+.ws-card h3{font-size:19px;font-weight:700}
+.ws-card p{font-size:15.5px;opacity:.92}
+.agenda{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:a}
+.agenda li{position:relative;display:grid;gap:6px;padding:0 0 28px 64px;counter-increment:a}
+.agenda li::before{content:counter(a);position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--blue);color:var(--onblue);display:grid;place-items:center;font-family:var(--display);font-weight:700}
+.agenda li::after{content:"";position:absolute;left:19px;top:44px;bottom:4px;width:2px;background:var(--line)}
+.agenda li:last-child{padding-bottom:0}.agenda li:last-child::after{display:none}
+.agenda li:last-child::before{background:var(--orange);color:#fff}
+.agenda .kind{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-family:var(--display);font-weight:600;color:var(--orange-ink)}
+.agenda h3{font-size:21px;font-weight:700}
+.agenda p{color:var(--muted);max-width:62ch}
+.agenda q{font-family:var(--serif);font-style:italic;font-size:19px}
+@media (max-width:900px){
+  .about{grid-template-columns:1fr;gap:28px}
+  .ws{grid-template-columns:1fr 1fr}
+}
+@media (max-width:680px){
+  body{padding-inline:16px}
+  .logos{justify-content:center;padding-block:14px}
+  .logos .set{flex-wrap:nowrap;gap:8px;justify-content:center;width:100%}
+  .chip{height:48px;padding:6px 8px;flex:0 1 auto;min-width:0}
+  .chip img{max-height:30px;max-width:100%}
+  .chip.cw{padding:3px 8px}.chip.cw img{max-height:42px;max-width:none}
+  .hero{padding-block:8px 44px;gap:14px}
+  .lockup{flex-direction:column;gap:12px}
+  .lockup .globe{width:150px}
+  .lockup-text{border-left:none;padding-left:0;text-align:center;border-top:3px solid var(--ink);padding-top:12px}
+  .lockup h1{font-size:40px}
+  .hero .tagline{font-size:20px}
+  .hero-row{flex-direction:column;width:100%;gap:18px}
+  .hero .facts{width:100%}
+  .fact b br{display:none}
+  .count div{min-width:58px;padding:6px 10px}.count b{font-size:22px}
+  .sec-head{margin-bottom:24px}
+  .sec-head h2{font-size:26px}
+  .ws{grid-template-columns:1fr;gap:12px}
+  .ws-card{padding:18px}
+  .who dl>div{grid-template-columns:1fr;gap:2px}
+  .agenda li{padding-left:54px}
+  .agenda h3{font-size:19px}
+  .expert h3{font-size:24px}
+  .expert .photo img{aspect-ratio:1/1;max-height:280px;object-position:center 20%}
+  .bigq{font-size:24px}
+  .posters{gap:16px}
+  .foot-row{flex-direction:column;font-size:14px}
+}
 @media (prefers-reduced-motion:reduce){.globe{animation:none}}
 </style>
 <style>body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
@@ -183,95 +255,90 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;display:grid;gap
   <header class="logos">
     <div class="set">
       <div class="chip"><img src="img/riverside.png" alt="The Riverside School"></div>
-      <div class="chip cw"><img src="img/climateweek.jpg" alt="Climate Week India ’26, Sept 27 – Oct 4"></div>
+      <div class="chip cw"><img src="img/climateweek.png" alt="Climate Week India ’26, Sept 27 – Oct 4"></div>
       <div class="chip"><img src="img/aproch.png" alt="aProCh"></div>
     </div>
     <nav aria-label="Sections">
-      <a href="#programme">Programme</a>
+      <a href="#about">About</a>
+      <a href="#workshops">Workshops</a>
+      <a href="#agenda">Agenda</a>
       <a href="#experts">Experts</a>
-      <a href="#outcomes">Outcomes</a>
-      <a href="#posters">Invite</a>
     </nav>
   </header>
 
   <div class="hero">
-    <div>
-      <div class="eyebrow">A student-led initiative · Climate Week India ’26</div>
-      <h1><span class="a">ClimatEd</span> <span class="b">Summit 2026</span></h1>
-      <p class="tagline">From everyday choices to collective action</p>
-      <p class="lede">Climate change can feel like a distant, global issue. But the choices we make every day, what we eat, buy, use and discard, are deeply connected to the planet. This summit brings students from different schools together to explore those connections.</p>
-      <div class="facts" role="group" aria-label="Event details">
-        <div class="bar">JOIN US <small>| By invitation only</small></div>
-        <div class="fact"><span>Date</span><b>Thursday,<br>1 Oct 2026</b></div>
-        <div class="fact"><span>Time</span><b>9:00 AM –<br>1:00 PM</b></div>
-        <div class="fact"><span>Venue</span><b>The Riverside School,<br>Ahmedabad</b></div>
+    <div class="lockup">
+      <img class="globe" src="img/globe.png" alt="ClimatEd Summit globe: half grey with smoke and cars, half green with trees and water">
+      <div class="lockup-text">
+        <h1><span class="a">ClimatEd</span> <span class="b">Summit 2026</span></h1>
+        <p class="sub">A Student-led initiative</p>
       </div>
     </div>
-    <div class="globe-box">
-      <img class="globe" src="img/globe.png" alt="Illustrated globe, half grey with smoke and cars, half green with trees and water">
-      <div class="split-label" aria-hidden="true"><span class="l">← what we do now</span><span class="r">what we could do →</span></div>
-      <div class="count" id="count" aria-live="polite">
-        <div><b id="cd-d">--</b><small>days</small></div>
-        <div><b id="cd-h">--</b><small>hours</small></div>
-        <div><b id="cd-m">--</b><small>min</small></div>
+    <p class="tagline">From everyday choices to collective action</p>
+    <div class="hero-row">
+      <div class="facts" role="group" aria-label="Event details">
+        <div class="bar">JOIN US <small>| By invitation only</small></div>
+        <div class="fact"><span>Date</span><b>Thursday, <br>1 Oct 2026</b></div>
+        <div class="fact"><span>Time</span><b>9:00 AM – <br>1:00 PM</b></div>
+        <div class="fact"><span>Venue</span><b>The Riverside School, <br>Ahmedabad</b></div>
       </div>
-      <p class="count-note" id="count-note">until the summit opens</p>
+      <div class="count-wrap">
+        <div class="count" id="count" aria-live="polite">
+          <div><b id="cd-d">--</b><small>days</small></div>
+          <div><b id="cd-h">--</b><small>hours</small></div>
+          <div><b id="cd-m">--</b><small>min</small></div>
+        </div>
+        <p class="count-note" id="count-note">until the summit opens</p>
+      </div>
     </div>
   </div>
 
-  <section id="journey">
-    <div class="sec-head">
-      <div class="eyebrow">Our journey</div>
-      <h2>Five steps from a question to a commitment</h2>
-      <p>The morning is built as a path. Each part of the programme moves students one step along it.</p>
-    </div>
-    <div class="journey">
-      <div class="step"><h3>Understand</h3><p>See how daily choices connect to the planet.</p></div>
-      <div class="step"><h3>Question</h3><p>Ask whether individual action is enough.</p></div>
-      <div class="step"><h3>Share</h3><p>Hear student voices and expert perspectives.</p></div>
-      <div class="step"><h3>Experience</h3><p>Try hands-on stations and exhibitions.</p></div>
-      <div class="step"><h3>Commit</h3><p>Take one real action back to school.</p></div>
+  <section id="about">
+    <div class="about">
+      <div class="sec-head">
+        <div class="eyebrow">About the summit</div>
+        <h2>What is ClimatEd Summit 2026?</h2>
+        <p>Climate change can feel like a distant, global issue. But the choices we make every day, what we eat, buy, use and discard, are deeply connected to the planet.</p>
+        <p>ClimatEd Summit 2026 brings together students from different schools to explore these connections through student voices, expert perspectives, interactive experiences and collaborative problem-solving. It is organised by the Grade 8 students of The Riverside School with aProCh, as part of Climate Week India ’26.</p>
+      </div>
+      <div class="who">
+        <div class="eyebrow">Who is coming</div>
+        <dl>
+          <div><dt>Hosts</dt><dd>Grade 8 students &amp; aProCh</dd></div>
+          <div><dt>Participants</dt><dd>Students and educators from different schools, and climate practitioners</dd></div>
+          <div><dt>Experts</dt><dd>Dr. Rutul Joshi, Mr. Tejas Joshi, Mr. Ashish Agrawal</dd></div>
+          <div><dt>Entry</dt><dd>By invitation only</dd></div>
+        </dl>
+      </div>
     </div>
   </section>
 
-  <section id="programme">
+  <section id="workshops">
     <div class="sec-head">
-      <div class="eyebrow">What will happen</div>
-      <h2>Student voices, expert perspectives and hands-on climate action</h2>
+      <div class="eyebrow">Workshops</div>
+      <h2>Hands-on stations that make climate action tangible</h2>
+      <p>Learn about sustainability, conservation, composting, the 3Rs and much more. Join us to learn, have fun and understand nature.</p>
     </div>
-    <div class="prog">
-      <div class="item">
-        <div class="kind">Experience &amp; provocation</div>
-        <h3>An opening conversation</h3>
-        <q>Is individual action enough to address climate change?</q>
-      </div>
-      <div class="item">
-        <div class="kind">Expert perspectives</div>
-        <h3>Inspirational spark</h3>
-        <p>Invited experts give short, thought-provoking inputs and take questions directly from students.</p>
-      </div>
-      <div class="item">
-        <div class="kind">Showcase of solutions</div>
-        <h3>Climate innovation challenge</h3>
-        <p>Mixed inter-school teams pick a climate problem, design an innovative solution together, and pitch it as a real sustainability idea.</p>
-      </div>
-      <div class="item">
-        <div class="kind">Commit</div>
-        <h3>One action per school</h3>
-        <p>Each participating school names one specific, achievable action to take back to its school community.</p>
-      </div>
-      <div class="item wide">
-        <div class="kind">Workshops · Interactive experiences</div>
-        <h3>Stations that make climate action tangible</h3>
-        <p>Learn about sustainability, conservation, composting, the 3Rs and much more, alongside student-led sustainability exhibitions.</p>
-        <div class="stations">
-          <span>Where Does It Go?</span>
-          <span>Bachhat Bazaar / Swap</span>
-          <span>Everyday Climate Choices</span>
-          <span>Student exhibitions</span>
-        </div>
-      </div>
+    <div class="ws">
+      <div class="ws-card"><h3>Where Does It Go?</h3><p>Follow what we throw away and see where our waste really ends up.</p></div>
+      <div class="ws-card"><h3>Bachhat Bazaar / Swap</h3><p>Swap instead of buying new, and see how reuse saves resources.</p></div>
+      <div class="ws-card"><h3>Everyday Climate Choices</h3><p>Explore how small daily decisions about food, travel and things add up.</p></div>
+      <div class="ws-card"><h3>Student-led exhibitions</h3><p>Sustainability projects designed and presented by students.</p></div>
     </div>
+  </section>
+
+  <section id="agenda">
+    <div class="sec-head">
+      <div class="eyebrow">Agenda · 9:00 AM – 1:00 PM</div>
+      <h2>How the morning unfolds</h2>
+    </div>
+    <ol class="agenda">
+      <li><div class="kind">Experience &amp; provocation</div><h3>Opening conversation</h3><q>Is individual action enough to address climate change?</q></li>
+      <li><div class="kind">Inspirational spark</div><h3>Expert perspectives</h3><p>Invited experts give short, thought-provoking inputs and take questions directly from students.</p></li>
+      <li><div class="kind">Showcase of solutions</div><h3>Climate innovation challenge</h3><p>Mixed inter-school teams pick a climate problem, design an innovative solution together, and pitch it as a real sustainability idea.</p></li>
+      <li><div class="kind">Workshops</div><h3>Interactive experiences</h3><p>Stations and student-led exhibitions across the campus.</p></li>
+      <li><div class="kind">Commit</div><h3>One action per school</h3><p>Each participating school names one specific, achievable action to take back to its school community.</p></li>
+    </ol>
   </section>
 
   <section id="experts">
@@ -307,18 +374,6 @@ footer{border-top:1px solid var(--line);padding-block:48px 56px;display:grid;gap
     </div>
   </section>
 
-  <section id="glance">
-    <div class="sec-head">
-      <div class="eyebrow">The summit at a glance</div>
-      <h2>Who, when and how</h2>
-    </div>
-    <div class="glance">
-      <div><span>Hosts</span><b>Grade 8 students &amp; aProCh</b></div>
-      <div><span>Participants</span><b>Students, educators and climate practitioners</b></div>
-      <div><span>Duration</span><b>9:00 AM – 1:00 PM</b></div>
-      <div><span>Format</span><b>Student voices · Expert perspectives · Innovation challenge · Interactive experiences · Dialogue</b></div>
-    </div>
-  </section>
 
   <section id="outcomes">
     <div class="outcomes">
